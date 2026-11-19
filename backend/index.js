@@ -19,7 +19,7 @@ connectDB();
 
 app.use(
     cors({
-        origin: "http://localhost:5173",//origin: "*"
+        origin: "http://localhost:5173" || "https://musicalbytes.onrender.com"//origin: "*"
         credentials: true,
     })
 );
