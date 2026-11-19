@@ -4,6 +4,7 @@ import cors from "cors";
 import connectDB from "./config/connectDB.js";
 import router from "./routes/authRoutes.js";
 import songRouter from "./routes/songRoutes.js";
+import morgan from "morgan";
 
 
 dotenv.config(".env");////if we don't want to show the port directly we use .env file and from there we can access the things which we want to and hide it from the direct display
@@ -12,7 +13,7 @@ const PORT = process.env.PORT || 5001;
 
 const app = express();//here we are giving all powers of express to app.
 app.use(express.json());//it will convert all the data coming to app to json format
-
+app.use(morgan("dev"));
 //coonect your Database
 connectDB();
 
